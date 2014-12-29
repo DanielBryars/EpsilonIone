@@ -1,6 +1,5 @@
 C:\git\EpsilonIone\EpsilonIone\bin\EpsilonIone.dll.config
 C:\git\EpsilonIone\EpsilonIone\bin\EpsilonIone.dll
 C:\git\EpsilonIone\EpsilonIone\bin\EpsilonIone.pdb
-C:\git\EpsilonIone\EpsilonIone\obj\Debug\EpsilonIone.csprojResolveAssemblyReference.cache
 C:\git\EpsilonIone\EpsilonIone\obj\Debug\EpsilonIone.dll
 C:\git\EpsilonIone\EpsilonIone\obj\Debug\EpsilonIone.pdb

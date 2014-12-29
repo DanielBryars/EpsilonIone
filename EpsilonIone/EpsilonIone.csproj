@@ -57,13 +57,94 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app.js" />
+    <Content Include="Content\all.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="icons\osa_arrow_green_left.svg" />
+    <Content Include="icons\osa_arrow_yellow_right.svg" />
+    <Content Include="icons\osa_awareness.svg" />
+    <Content Include="icons\osa_camera-web.svg" />
+    <Content Include="icons\osa_cloud.svg" />
+    <Content Include="icons\osa_contract.svg" />
+    <Content Include="icons\osa_database.svg" />
+    <Content Include="icons\osa_desktop.svg" />
+    <Content Include="icons\osa_desktop_imac.svg" />
+    <Content Include="icons\osa_device-music.svg" />
+    <Content Include="icons\osa_device-scanner.svg" />
+    <Content Include="icons\osa_device-usb-wifi.svg" />
+    <Content Include="icons\osa_device-usb.svg" />
+    <Content Include="icons\osa_device-wireless-router.svg" />
+    <Content Include="icons\osa_disposal.svg" />
+    <Content Include="icons\osa_drive-harddisk.svg" />
+    <Content Include="icons\osa_drive-optical.svg" />
+    <Content Include="icons\osa_firewall.svg" />
+    <Content Include="icons\osa_home.svg" />
+    <Content Include="icons\osa_hub.svg" />
+    <Content Include="icons\osa_ics_drive.svg" />
+    <Content Include="icons\osa_ics_plc.svg" />
+    <Content Include="icons\osa_ics_thermometer.svg" />
+    <Content Include="icons\osa_id_card.svg" />
+    <Content Include="icons\osa_image-generic.svg" />
+    <Content Include="icons\osa_iPhone.svg" />
+    <Content Include="icons\osa_laptop.svg" />
+    <Content Include="icons\osa_lifecycle.svg" />
+    <Content Include="icons\osa_lightning.svg" />
+    <Content Include="icons\osa_media-flash.svg" />
+    <Content Include="icons\osa_media-optical.svg" />
+    <Content Include="icons\osa_media-tape.svg" />
+    <Content Include="icons\osa_mobile_pda.svg" />
+    <Content Include="icons\osa_padlock.svg" />
+    <Content Include="icons\osa_printer.svg" />
+    <Content Include="icons\osa_server.svg" />
+    <Content Include="icons\osa_server_application.svg" />
+    <Content Include="icons\osa_server_database.svg" />
+    <Content Include="icons\osa_server_directory.svg" />
+    <Content Include="icons\osa_server_distribution.svg" />
+    <Content Include="icons\osa_server_file.svg" />
+    <Content Include="icons\osa_server_gateway.svg" />
+    <Content Include="icons\osa_server_identity.svg" />
+    <Content Include="icons\osa_server_mail.svg" />
+    <Content Include="icons\osa_server_media.svg" />
+    <Content Include="icons\osa_server_monitor.svg" />
+    <Content Include="icons\osa_server_proxy.svg" />
+    <Content Include="icons\osa_server_terminal.svg" />
+    <Content Include="icons\osa_server_web.svg" />
+    <Content Include="icons\osa_site-branch.svg" />
+    <Content Include="icons\osa_site-factory.svg" />
+    <Content Include="icons\osa_site-head-office.svg" />
+    <Content Include="icons\osa_site-neighbourhood.svg" />
+    <Content Include="icons\osa_users_blue_green.svg" />
+    <Content Include="icons\osa_user_audit.svg" />
+    <Content Include="icons\osa_user_black_hat.svg" />
+    <Content Include="icons\osa_user_blue.svg" />
+    <Content Include="icons\osa_user_blue_security_specialist.svg" />
+    <Content Include="icons\osa_user_blue_sysadmin.svg" />
+    <Content Include="icons\osa_user_blue_tester.svg" />
+    <Content Include="icons\osa_user_blue_tie.svg" />
+    <Content Include="icons\osa_user_green.svg" />
+    <Content Include="icons\osa_user_green_architect.svg" />
+    <Content Include="icons\osa_user_green_business_manager.svg" />
+    <Content Include="icons\osa_user_green_developer.svg" />
+    <Content Include="icons\osa_user_green_operations.svg" />
+    <Content Include="icons\osa_user_green_project_manager.svg" />
+    <Content Include="icons\osa_user_green_service_manager.svg" />
+    <Content Include="icons\osa_user_green_warning.svg" />
+    <Content Include="icons\osa_user_large_group.svg" />
+    <Content Include="icons\osa_user_white_hat.svg" />
+    <Content Include="icons\osa_vpn.svg" />
+    <Content Include="icons\osa_warning.svg" />
+    <Content Include="icons\osa_wireless_network.svg" />
+    <Content Include="images\sparkler.gif" />
     <Content Include="Index.html" />
     <Content Include="LICENSE.txt" />
+    <Content Include="main.js" />
+    <Content Include="modules\domReady.js" />
+    <Content Include="modules\sparql\sparqlClient.js" />
+    <Content Include="modules\visualisation\graphRenderer.js" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -75,11 +156,16 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\d3.js" />
     <Content Include="Scripts\d3.min.js" />
-    <Content Include="Scripts\d3sparql.js" />
+    <Content Include="Scripts\d3sparql.old.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\knockout-3.2.0.debug.js" />
+    <Content Include="Scripts\knockout-3.2.0.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="SparqlForce.html" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
+    <Content Include="modules\sparql\sparqlToGraph.js" />
+    <Content Include="modules\viewModel\sparqlForceViewModel.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
   </ItemGroup>
@@ -94,6 +180,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
