@@ -7,6 +7,19 @@
                 console.log('forcegraph');
                 console.log(JSON.stringify(graph));
 
+                function dblclick(d) {
+                    d3.select(this).classed("fixed", d.fixed = false);
+                }
+
+                function dragstart(d) {
+                    d3.select(this).classed("fixed", d.fixed = true);
+                }
+
+
+                function dragend(d) {
+                    console.log(d.x + ',' + d.y);
+                }
+
                 var opts = {
                     "radius": config.radius || function (d) { return 1 + d.label.length; },
                     "charge": config.charge || -500,
@@ -22,9 +35,10 @@
                     svg = d3.select(targetSvgSelector);
 
                     var jQuerySvg = $(targetSvgSelector);
-
                     opts.height = jQuerySvg.height();
                     opts.width = jQuerySvg.width();
+                    jQuerySvg.empty();
+
                 } else {
                     svg = d3.select("body")
                         .append("svg")
@@ -47,7 +61,8 @@
                     .attr("xlink:href", "icons/osa_server_database.svg")
                     .attr("class", "node")
                     .attr("width", 28)
-                    .attr("height", 28);
+                    .attr("height", 28)
+                    .on("dblclick", dblclick);
 
                 var text = node.append("text")
                   .text(function (d) { return d[opts.label || "label"]; })
@@ -61,6 +76,10 @@
                   .links(graph.links)
                   .start();
 
+                force.drag()
+                    .on("dragstart", dragstart)
+                    .on("dragend", dragend);
+
                 force.on("tick", function () {
                     link.attr("x1", function (d) { return d.source.x; })
                         .attr("y1", function (d) { return d.source.y; })
@@ -71,16 +90,13 @@
                     circle.attr("x", function (d) { return d.x; })
                           .attr("y", function (d) { return d.y; });
                 });
+
                 node.call(force.drag); // default CSS/SVG
+
                 link.attr({
                     "stroke": "#999999",
                 });
-                circle.attr({
-                    "stroke": "black",
-                    "stroke-width": "1px",
-                    "fill": "lightblue",
-                    "opacity": 1,
-                });
+
                 text.attr({
                     "font-size": "12px",
                     "font-family": "HelveticaNeue-Light, sans-serif",

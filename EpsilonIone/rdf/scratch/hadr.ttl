@@ -1,0 +1,11 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix things: <http://aeriandi.com/things/> .
+@prefix aeriandi: <http://www.aeriandi.com/>.
+@prefix dependency: <http://www.aeriandi.com/dependency#>.
+
+aeriandi:callRecordingRetreival a things:operation .
+aeriandi:callRecordingRetreival dependency:reliesOn aeriandi:callStorage .
+
+aeriandi:callStorage a things:operation .
+
+

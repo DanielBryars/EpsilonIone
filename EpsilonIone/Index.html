@@ -2,86 +2,41 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Epsilone Ione</title>
-    
+        <title>Epsilone Ione</title>  
         <link href="Content/bootstrap.css" rel="stylesheet" />
         <link href="Content/bootstrap-theme.css" rel="stylesheet" />
-        <link href="Content/all.css" rel="stylesheet" />
-   
+        <link href="Content/all.css" rel="stylesheet" />   
         <script data-main="main" src="Scripts/require.js"></script>
-
-        <script>    
-            function toggle() {
-                d3sparql.toggle();
-            }
-        </script>
     </head>
 
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top pull-left">
-            <div class="container">
+    <body>        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Epsilone Ione</a>
+                    <a class="navbar-brand" href="#">EPSILON IONE</a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
-                            <a href="javascript:loadframe('SparqlForce.html');">Sparql Force</a>
-                        </li>
-                        <li>
-                            <a href="javascript:loadframe('Scratch.html');">Scratch</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Themes<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-header">Admin  Dashboard</li>
-                                <li><a href="#">Dash 1</a></li>
-                                <li><a href="#">Dash 2</a></li>
-                                <li class="dropdown-header">Portfolio</li>
-                                <li><a href="#">port 1</a></li>
-                                <li><a href="#">port 2</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <li><a href="#" data-bind='click: executeSearch'>Demo Graph</a></li>
+                        <li><a href="#" data-bind='click: scratch'>BrightStar 1</a></li>
+                        <li><a href="#" data-bind='click: executeSearch'>Profile 2</a></li>
+                        <li><a href="#">Help</a></li>                       
+                    </ul>                    
                 </div>
             </div>
-        </div>
-    
-        <div class="container" style="padding: 50px">
-            <div class="jumbotron text-center">
-                <div id="query" style="margin: 10px">
-                    <h1>d3forcegraph</h1>
-                    <form class="form-inline">
-                        <label>SPARQL endpoint:</label>
-                        <div class=".input-group">
-                            <input id="endpoint" class="col-md-5" data-bind='value: endpoint' type="text">
-                            <button class="btn" type="button" data-bind='click: executeSearch'>Query</button>
-                            <button class="btn" type="button" onclick="toggle()"><i id="button" class="glyphicon-chevron-up"></i></button>
-                        </div>
-                    </form>
-                    <textarea id="sparql" class="col-md-9" data-bind='value: sparqlQueryText' rows=15></textarea>
-                </div>
-            </div>
-        </div>
-    
+        </nav>
+            
         <!-- ReSharper disable Html.TagNotResolved -->
         <svg id="mySvg" style="width:100%; height:100%; position:fixed; top:0; left:0; z-index:-100">
             <rect fill="lime" width="100%" height="100%" />        
         </svg>
         <!-- ReSharper restore Html.TagNotResolved -->
 
-        <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-            <div class="container">
-                <div class="navbar-text pull-left">
-                    <p>Aeriandi Limited</p>
-                </div>            
-            </div>
-        </div>
     </body>
 </html>

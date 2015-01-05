@@ -3,3 +3,4 @@ C:\git\EpsilonIone\EpsilonIone\bin\EpsilonIone.dll
 C:\git\EpsilonIone\EpsilonIone\bin\EpsilonIone.pdb
 C:\git\EpsilonIone\EpsilonIone\obj\Debug\EpsilonIone.dll
 C:\git\EpsilonIone\EpsilonIone\obj\Debug\EpsilonIone.pdb
+C:\git\EpsilonIone\EpsilonIone\obj\Debug\EpsilonIone.csprojResolveAssemblyReference.cache

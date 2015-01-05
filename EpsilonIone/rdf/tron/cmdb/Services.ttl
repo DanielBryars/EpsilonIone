@@ -1,0 +1,78 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix cmdb: <https://danielbryars.github.io/ontology/cmdb/> .
+
+
+services:sbc 
+ rdf:type service: ;
+ dc:title "Session Border Controller" ;
+ restrictAccessTo: "TelephonyAdministrators" ;
+ mustAudit: "Login" ; 
+ mustAudit: "ConfigChanges";
+ isAuditedBy: "kiwi".
+
+services:rtpProxy 
+ rdf:type service: ;
+ dc:title "Rtp Proxy" ;
+ restrictAccessTo: "TelephonyAdministrators" ;
+ mustAudit: "Login" ; 
+ mustAudit: "ConfigChanges";
+ isAuditedBy: "kiwi".
+  
+services:tap 
+ rdf:type service: ;
+ dc:title "Telephony Application Processor" ;
+ restrictAccessTo: "TelephonyAdministrators" ;
+ mustAudit: "Login" ; 
+ mustAudit: "ConfigChanges";
+ isAuditedBy: "kiwi".
+ 
+services:tapLocalStorage 
+ rdf:type service: ;
+ dc:title "Local File Storage" ;
+ restrictAccessTo: "TelephonyAdministrators" ;
+ restrictAccessTo: "CallRecordingServiceAccount" ;
+ mustAudit: "FileAccess";
+ isAuditedBy: "kiwi".
+ 
+services:callRecordingTransferService 
+ rdf:type service: ;
+ dc:title "Call Recording Transfer Service" ;
+ restrictAccessTo: "DeploymentAdministrators" ;
+ needsAccessTo: services:tapLocalStorage ;
+ needsAccessTo: services:tronLocalCallRecordingStorage ;
+ dependsOn: services:tapLocalStorage ;
+ dependsOn: services:callStorageLocationData ;
+ isAuditedBy: "kiwi".
+ 
+services:callStorageLocationData   
+rdf:type database: ;
+rdfs:comment "This is where the location of each call recording is stored, and the symmetric encryption key. It also stores the file hash. Note: ";
+doNotGiveAccessTo: "TelephonyAdministrators" ;
+restrictAccessTo: "DeploymentAdministrators" ;
+mustAudit: "None";
+ isAuditedBy: "kiwi".
+ 
+services:tronLocalCallRecordingStorage
+rdf:type fileshare: ; 
+doNotGiveAccessTo: "TelephonyAdministrators" ;
+restrictAccessTo: "DeploymentAdministrators" ;
+ isAuditedBy: "windows + centralised by nnt".
+
+services:rabbit
+ rdf:type service: ;
+ dc:title "Clustered AMQP Broker" .
+ 
+services:correlation
+ rdf:type service: ;
+ dc:title "Correlation Service" .
+ 
+services:subscription
+ rdf:type service: ;
+ dc:title "Subscription Service" .
+ 
+
+
+ 

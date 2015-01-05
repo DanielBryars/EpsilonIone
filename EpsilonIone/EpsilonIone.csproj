@@ -63,6 +63,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dashboard.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="icons\osa_arrow_green_left.svg" />
     <Content Include="icons\osa_arrow_yellow_right.svg" />
@@ -151,8 +152,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="rdf\scratch\AllEntities.ttl" />
+    <None Include="rdf\sparql\everyTriple.rq" />
+    <Content Include="Scratch.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="rdf\scratch\DTMF Payment.ttl" />
+    <Content Include="rdf\scratch\hadr.ttl" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\d3.js" />
     <Content Include="Scripts\d3.min.js" />

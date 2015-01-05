@@ -10,9 +10,12 @@
 
                 var deferred = new $.Deferred();
 
-                d3.xhr(url, mime, function (request) {
+                d3.xhr(url, mime, function (error, request) {
                     var json = request.responseText;
                     var jsonParsed = JSON.parse(json);
+
+                    console.log(json);
+
                     deferred.resolve(jsonParsed);
                 });
 
