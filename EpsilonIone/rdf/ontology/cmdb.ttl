@@ -2,7 +2,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix cmdb: <https://danielbryars.github.io/ontology/cmdb/> .
+
+@prefix cmdb: <https://raw.githubusercontent.com/DanielBryars/EpsilonIone/master/EpsilonIone/rdf/ontology/cmdb.ttl#> .
+
+#@prefix cmdb: <http://purl.org/aer/cmdb/1.0/> .
+
+#@prefix cmdb: <http://aeriandi.com/ontology/cmdb/> .
+#@prefix cmdbl: <http://aeriandi.com/ontology/cmdb/layout/> .
 
 #entities and services
 cmdb:service 
