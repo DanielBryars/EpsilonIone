@@ -152,12 +152,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="rdf\tron\cmdb\Services.ttl" />
+    <Content Include="rdf\tron\cmdb\Catalog\index.ttl" />
+    <Content Include="rdf\ontology\cmdb.ttl" />
     <Content Include="rdf\scratch\AllEntities.ttl" />
     <None Include="rdf\sparql\everyTriple.rq" />
     <Content Include="Scratch.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="rdf\scratch\DTMF Payment.ttl" />
+    <Content Include="rdf\tron\cmdb\Catalog\DTMF Payment.ttl" />
     <Content Include="rdf\scratch\hadr.ttl" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\d3.js" />
