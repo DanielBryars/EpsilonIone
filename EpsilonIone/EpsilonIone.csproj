@@ -156,6 +156,7 @@
     <Content Include="rdf\tron\cmdb\Catalog\index.ttl" />
     <Content Include="rdf\ontology\cmdb.ttl" />
     <Content Include="rdf\scratch\AllEntities.ttl" />
+    <Content Include="rdf\sparql\allServiceDependencyGraphsInIndex.rq" />
     <None Include="rdf\sparql\everyTriple.rq" />
     <Content Include="Scratch.html" />
     <Content Include="Scripts\bootstrap.js" />

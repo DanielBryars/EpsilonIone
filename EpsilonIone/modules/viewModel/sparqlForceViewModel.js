@@ -11,22 +11,15 @@
         
         var viewModelFactory = function() {
             var model = this;
-
-            this.endpoint = ko.observable('http://togostanza.org/sparql');
-            this.sparqlQueryText = ko.observable('PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> \n' +
-                'PREFIX up: <http://purl.uniprot.org/core/> \n' +
-                'PREFIX tax: <http://purl.uniprot.org/taxonomy/> \n' +
-                'SELECT ?taxid1 ?taxid2 ?name1 ?name2 \n' +
-                'FROM <http://togogenome.org/graph/uniprot/> \n' +
-                'WHERE \n' +
-                '{ \n' +
-                '   ?taxon1 rdfs:subClassOf+ tax:58669 . \n' +
-                '   ?taxon1 rdfs:subClassOf ?taxon2 . \n' +
-                '   ?taxon1 up:scientificName ?name1 . \n' +
-                '   ?taxon2 up:scientificName ?name2 . \n' +
-                '   bind (strafter(str(?taxon1), \'taxonomy/\') as ?taxid1) \n' +
-                '   bind (strafter(str(?taxon2), \'taxonomy/\') as ?taxid2) \n' +
-                '}');
+            
+            this.endpoint = ko.observable('http://dandesktop:8090/brightstar/tronCmdb/sparql');
+            this.sparqlQueryText = ko.observable('PREFIX cmdb: <http://purl.org/aer/cmdb/1.0/> ' +
+'' +
+'SELECT ?s '+
+'WHERE '+
+'            {'+
+'                GRAPH <http://aeriandi.com/cmdbTron/ServiceCatalog#Index> { ?s a cmdb:serviceDependencyGraph  }  ' +
+'            }');
 
             this.executeSearch = function executeSearch() {
 
