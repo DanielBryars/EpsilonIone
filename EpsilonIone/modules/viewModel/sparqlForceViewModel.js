@@ -5,9 +5,10 @@
         'knockout',
         'sparql/sparqlClient',
         'sparql/sparqlToGraph',
-        'visualisation/graphRenderer'
+        'visualisation/graphRenderer',
+        'mustache'
     ],
-    function($, d3, ko, sparqlClient, sparqlToGraph, graphRenderer) {
+    function($, d3, ko, sparqlClient, sparqlToGraph, graphRenderer, mustache) {
 
         var viewModel = function() {
 
@@ -23,14 +24,16 @@
                 '            }');
 
             this.populateServicesUiDropDown = function populateServicesUiDropDown() {
-                require(['text!sparqlQueries/allServiceDependencyGraphsInIndex.txt'], function(rq) {
+
+                var deferred = new $.Deferred();
+
+                require(['text!sparqlQueries/allServiceDependencyGraphsInIndex.txt'], function (rq) {
                     console.log(rq);
 
                     var endpoint = model.endpoint();
                     var sparql = rq;
 
-
-                    sparqlClient
+                    return sparqlClient
                         .query(endpoint, sparql)
                         .then(function (queryResult) {
 
@@ -46,7 +49,7 @@
                                 var item = queryResult.results.bindings[i];
                                 console.log(item.graphName.value + " " + item.label.value);
 
-                                bootStrapDropDownHtml += "<a href=\"#\">" + item.label.value + "</a>";
+                                bootStrapDropDownHtml += "<a href=\"#\" data-graphName=\"" + item.graphName.value + "\" data-bind=\"click: executeSearch\" >" + item.label.value + "</a>";
 
                                 bootStrapDropDownHtml += "</li>";
                             }
@@ -57,25 +60,32 @@
                             $("#mainMenu").html(bootStrapDropDownHtml);
                             $('.dropdown-toggle').dropdown();
 
+                            deferred.resolve();
                         });                    
                 });
+
+                return deferred.promise();
             };
 
-            this.executeSearch = function executeSearch() {
-                require(['text!sparqlQueries/allServiceDependencyGraphsInIndex.txt'], function(rq) {
+            this.executeSearch = function executeSearch(item, event) {
+
+                var itemClickedOn = event.target;
+
+                var graphName = itemClickedOn.getAttribute("data-graphName");
+
+                var renderData = {};
+                renderData["graphName"] = graphName;
+
+                require(['text!sparqlQueries/reliabilityDependsOnQuery.txt'], function (rq) {
+                    console.log(rq);
+                    rq = mustache.render(rq, renderData);
                     console.log(rq);
 
                     var endpoint = model.endpoint();
-                    var sparql = rq; //model.sparqlQueryText();
+                    var sparql = rq;
 
                     var renderFromResult = function(results) {
-
-                        var graph = sparqlToGraph.toGraph(results, {
-                            "key1": "taxid1",
-                            "key2": "taxid2",
-                            "label1": "name1",
-                            "label2": "name2"
-                        });
+                        var graph = sparqlToGraph.toDependencyGraph(results);
 
                         graphRenderer.render(
                             graph, {

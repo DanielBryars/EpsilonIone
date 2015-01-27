@@ -4,13 +4,12 @@
         'bootstrap',
         'knockout',
         'viewModel/sparqlForceViewModel'],
-    function (dr, $, bs, ko, vm) {
+    function (dr, $, bs, ko, viewModel) {
     
-        ko.applyBindings(vm);
-
         var initialize = function() {
             console.log("Initialising UI");
-            vm.populateServicesUiDropDown();
+            viewModel.populateServicesUiDropDown()
+                .then(function () { ko.applyBindings(viewModel); });
         };
     return {
         initialize: initialize

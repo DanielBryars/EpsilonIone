@@ -1,0 +1,12 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cmdb: <http://purl.org/aer/cmdb/1.0/>
+
+SELECT ?fromNode ?toNode ?fromNodeLabel ?toNodeLabel
+WHERE
+{
+  { GRAPH <{{{graphName}}}> { ?fromNode cmdb:availabilityDependsOn ?toNode } }
+UNION
+ {  GRAPH <{{{graphName}}}> { ?fromNode rdfs:label ?fromNodeLabel } }
+UNION 
+{  GRAPH <{{{graphName}}}> { ?toNode rdfs:label ?toNodeLabel } }
+}

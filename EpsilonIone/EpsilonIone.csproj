@@ -154,6 +154,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="rdf\scratch\AllEntities.ttl" />
+    <Content Include="rdf\sparql\reliabilityDependsOnQuery.txt" />
     <Content Include="rdf\sparql\allServiceDependencyGraphsInIndex.txt" />
     <None Include="rdf\sparql\everyTriple.rq" />
     <Content Include="Scratch.html" />
@@ -168,6 +169,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\knockout-3.2.0.debug.js" />
     <Content Include="Scripts\knockout-3.2.0.js" />
+    <Content Include="Scripts\mustache.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\r.js" />
     <Content Include="Scripts\require.js" />

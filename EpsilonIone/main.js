@@ -12,7 +12,8 @@
         sparql: 'modules/sparql',
         viewModel: 'modules/viewModel',
         visualisation: 'modules/visualisation',
-        sparqlQueries: 'rdf/sparql'
+        sparqlQueries: 'rdf/sparql',
+        mustache: 'Scripts/mustache'
     }
 });
 
