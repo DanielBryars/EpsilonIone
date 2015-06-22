@@ -8,7 +8,8 @@
     
         var initialize = function() {
             console.log("Initialising UI");
-            viewModel.populateServicesUiDropDown()
+            viewModel
+                .populateServicesUiDropDown()
                 .then(function () { ko.applyBindings(viewModel); });
         };
     return {

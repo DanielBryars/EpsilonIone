@@ -54,6 +54,12 @@
                                 bootStrapDropDownHtml += "</li>";
                             }
 
+                            //add a dummy insert for testing
+                            bootStrapDropDownHtml += "<li>";
+                            bootStrapDropDownHtml += "<a href=\"#\" data-bind=\"click: testInsert\" >Test Insert</a>";
+
+                            bootStrapDropDownHtml += "</li>";
+
                             bootStrapDropDownHtml += "</ul>"
                                 + "</li>";
 
@@ -103,6 +109,17 @@
                         .then(renderFromResult);
                 });
             };
+
+            this.testInsert = function testInsert() {
+                var endpoint = 'http://dandesktop:8090/brightstar/MyGraph/sparql';
+                var updateSparql = "select ?s ?p ?o where { ?s ?p ?o } LIMIT 5";
+
+                sparqlClient
+                    .query(endpoint, updateSparql)
+                    .then(console.log);
+            };
+
+            
 
             this.scratch = function executeSearch() {
 
